@@ -2,6 +2,10 @@ package baseball.model;
 
 import baseball.util.RandomList;
 
+import java.util.List;
+
+import static baseball.util.IntegerParser.toList;
+
 public class Computer {
 	private final Balls answer;
 
@@ -11,5 +15,15 @@ public class Computer {
 
 	public static Computer pick(RandomList randomList) {
 		return new Computer(Balls.of(randomList.pick()));
+	}
+
+	public void match(String input) {
+		List<Integer> numbers;
+		try {
+			numbers = toList(input);
+		} catch (NumberFormatException e) {
+			throw new IllegalArgumentException("숫자만 입력 가능합니다");
+		}
+		Balls question = Balls.of(numbers);
 	}
 }
