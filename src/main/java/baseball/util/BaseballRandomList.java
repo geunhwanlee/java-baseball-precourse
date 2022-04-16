@@ -4,7 +4,10 @@ import baseball.model.Ball;
 import baseball.model.Balls;
 import camp.nextstep.edu.missionutils.Randoms;
 
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public class BaseballRandomList implements RandomList {
 	private static final int START_NUMBER = Ball.RANGE_FROM;
@@ -13,6 +16,10 @@ public class BaseballRandomList implements RandomList {
 
 	@Override
 	public List<Integer> pick() {
-		return Randoms.pickUniqueNumbersInRange(START_NUMBER, END_NUMBER, COUNT_OF_NUMBERS);
+		Set<Integer> numbers = new LinkedHashSet<>();
+		while (numbers.size() < COUNT_OF_NUMBERS) {
+			numbers.add(Randoms.pickNumberInRange(START_NUMBER, END_NUMBER));
+		}
+		return new ArrayList<>(numbers);
 	}
 }
