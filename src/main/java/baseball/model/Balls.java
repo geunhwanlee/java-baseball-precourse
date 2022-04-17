@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 
 public class Balls {
-	public static final int SIZE_ONLY = 3;
+	private static final int SIZE_ONLY = 3;
 	private final List<Ball> balls;
 
 	private Balls(List<Ball> balls) {

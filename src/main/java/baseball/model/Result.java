@@ -1,7 +1,7 @@
 package baseball.model;
 
 public class Result {
-	private static final int ANSWER_STRIKE_COUNT = Balls.SIZE_ONLY;
+	private static final int ANSWER_STRIKE_COUNT = 3;
 	private int strikeCount = 0;
 	private int ballCount = 0;
 

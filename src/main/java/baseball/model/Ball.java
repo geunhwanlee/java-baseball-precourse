@@ -3,8 +3,8 @@ package baseball.model;
 import java.util.List;
 
 public class Ball {
-	public static final int RANGE_FROM = 1;
-	public static final int RANGE_TO = 9;
+	private static final int RANGE_FROM = 1;
+	private static final int RANGE_TO = 9;
 	private final int number;
 	private final int position;
 
