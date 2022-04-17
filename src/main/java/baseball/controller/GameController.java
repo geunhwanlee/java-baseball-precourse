@@ -8,9 +8,11 @@ import baseball.view.GameView;
 public class GameController {
 	public void play() {
 		Computer computer = Computer.pick(new BaseballRandomList());
-		while (true) {
+		boolean isAnswer = false;
+		while (!isAnswer) {
 			Result result = computer.match(GameView.insertYourNumbers());
 			GameView.showHint(result);
+			isAnswer = result.isAnswer();
 		}
 	}
 }

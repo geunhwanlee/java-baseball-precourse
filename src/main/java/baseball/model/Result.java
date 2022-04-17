@@ -1,6 +1,7 @@
 package baseball.model;
 
 public class Result {
+	private static final int ANSWER_STRIKE_COUNT = Balls.SIZE_ONLY;
 	private int strikeCount = 0;
 	private int ballCount = 0;
 
@@ -19,5 +20,9 @@ public class Result {
 
 	public int getBallCount() {
 		return ballCount;
+	}
+
+	public boolean isAnswer() {
+		return strikeCount == ANSWER_STRIKE_COUNT;
 	}
 }
