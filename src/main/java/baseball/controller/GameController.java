@@ -14,5 +14,8 @@ public class GameController {
 			GameView.showHint(result);
 			isAnswer = result.isAnswer();
 		}
+		if (GameView.isRestart()) {
+			play();
+		}
 	}
 }
