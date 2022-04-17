@@ -17,13 +17,21 @@ public class Balls {
 			throw new IllegalArgumentException(SIZE_ONLY + "개의 서로 다른 숫자만 선택할 수 있습니다");
 		}
 		List<Ball> balls = new ArrayList<>();
-		for (Integer number : numbers) {
-			balls.add(new Ball(number));
+		for (int i = 0; i < numbers.size(); i++) {
+			balls.add(new Ball(numbers.get(i), i));
 		}
 		return new Balls(balls);
 	}
 
 	private static boolean is3DistinctNumbers(List<Integer> numbers) {
 		return new HashSet<>(numbers).size() == SIZE_ONLY;
+	}
+
+	public Result match(Balls answer) {
+		Result result = new Result();
+		for (Ball ball : balls) {
+			result.addStatus(ball.match(answer.balls));
+		}
+		return result;
 	}
 }
