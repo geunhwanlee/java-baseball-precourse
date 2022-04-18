@@ -9,7 +9,7 @@ public class Result {
 		if (status.isStrike()) {
 			strikeCount ++;
 		}
-		else if (status.isBall()) {
+		if (status.isBall()) {
 			ballCount ++;
 		}
 	}

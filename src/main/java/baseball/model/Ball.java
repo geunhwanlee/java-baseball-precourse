@@ -32,7 +32,7 @@ public class Ball {
 		if (isStrike(target)) {
 			return BallStatus.STRIKE;
 		}
-		else if (isBall(target)) {
+		if (isBall(target)) {
 			return BallStatus.BALL;
 		}
 		return BallStatus.NOTHING;
